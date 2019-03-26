@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+		Route::get('ping', function(){
+			return 'pong';
+		});
+
+		// Route::middleware('auth:api')->get('/user', function (Request $request) {
+  //   		return $request->user();
+		// });
+
+		Route::get('getUser', 'UserController@getUser');
+		Route::post('createUser', 'UserController@createUser');
+		Route::put('updateUser', 'UserController@updateUser');
+		Route::delete('deleteUser', 'UserController@deleteUser');

@@ -13,7 +13,7 @@ class UserController extends Controller
     	return User::all();
     }
 
-    public function insertUser(Request $request){
+    public function createUser(Request $request){
     	$data = new User();
     	$data['username']		= $request->input('username');
     	$data['password']		= $request->input('password');
