@@ -17,9 +17,11 @@ class ThreadController extends Controller
     public function createThread(Request $request){
     	$data = new Thread();
     	$data['title']			= $request->input('title');
-    	$data['user_id']		= $request->user()->id;
+    	// $data['user_id']		= $request->user()->id;
+    	$data['user_id']		= $request->input('user_id');
+    	$data['is_found']		= $request->input('is_found');
     	$data['description']	= $request->input('description');
-    	$data['photo']			= $request->input('photo');
+    	$data['picture']			= $request->input('picture');
     	$data['location']		= $request->input('location');
     	$data['time']			= $request->input('time');
     	$data->save();
@@ -33,8 +35,9 @@ class ThreadController extends Controller
     	Thread::where('id', '=', $request->input('id'))
     	->update([
     		'title'				=> $request->input('title'),
+    		'is_found'			=> $request->input('is_found'),
     		'description'		=> $request->input('description'),
-    		'photo'				=> $request->input('photo'),
+    		'picture'			=> $request->input('picture'),
     		'location'			=> $request->input('location'),
     		'time'				=> $request->input('time')
     	]);

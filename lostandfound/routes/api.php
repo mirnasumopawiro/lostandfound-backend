@@ -25,3 +25,8 @@ use Illuminate\Http\Request;
 		Route::post('createUser', 'UserController@createUser');
 		Route::put('updateUser', 'UserController@updateUser');
 		Route::delete('deleteUser', 'UserController@deleteUser');
+
+		Route::get('getThread', 'ThreadController@getThread');
+		Route::post('createThread', 'ThreadController@createThread');
+		Route::put('updateThread', 'ThreadController@updateThread');
+		Route::delete('deleteThread', 'ThreadController@deleteThread');

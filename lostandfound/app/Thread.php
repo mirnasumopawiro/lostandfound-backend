@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
-    protected $table = "thread";
+    protected $table = "threads";
     protected $fillable = [
-    		'id', 'title', 'description', 'picture', 'location', 'time'
+    		'id', 'is_found', 'title', 'description', 'picture', 'location', 'time'
     ];
 
     protected $casts = [
@@ -17,7 +17,5 @@ class Thread extends Model
 
     protected $primaryKey = "id";
 
-    public function types(){
-    	return $this->
-    }
+
 }
